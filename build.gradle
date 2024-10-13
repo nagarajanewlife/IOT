@@ -1,23 +1,23 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Replaced jcenter() with mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.0'
+        // Updated Android Gradle Plugin to a newer version compatible with recent Gradle
+        classpath 'com.android.tools.build:gradle:8.2.1'
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // If using Kotlin, add the Kotlin Gradle plugin
+        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21"
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral() // Replaced jcenter() with mavenCentral()
     }
 }
 
@@ -26,7 +26,10 @@ task clean(type: Delete) {
 }
 
 ext {
-    retrofitVersion = "2.3.0"
-    okHttpVersion = "3.8.1"
-    supportLibraryVersion = "28.0.0"
+    // Updated dependency versions to more recent and stable releases
+    retrofitVersion = "2.9.0"
+    okHttpVersion = "4.10.0"
+    appcompatVersion = "1.6.1"
+    coreKtxVersion = "1.10.1"
+    constraintLayoutVersion = "2.1.4"
 }
